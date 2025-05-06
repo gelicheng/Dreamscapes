@@ -20,7 +20,7 @@ async function submitText() {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
-          "api-key": "cfd56d1e-99c7-4776-b90d-09493bb44844"  
+          "api-key": "YOUR_API_KEY"  
         },
         body: `text=${encodeURIComponent(text)}`
       });
