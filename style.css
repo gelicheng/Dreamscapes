@@ -1,0 +1,74 @@
+/*fix all the colors*/
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+
+textarea, canvas, button, input[type="date"] {
+    margin: 10px;
+    font-size: 1rem;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #CCD1D8;
+    border: none;
+    color: #EB7096;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+button:hover {
+    background-color: #EBBAC2;
+}
+
+.output-box {
+    margin-top: 20px;
+    background-color: #F5F2F0;
+    color: #333; 
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 300px;
+    text-align: center;
+}
+
+.parallax-bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0;
+    overflow: hidden;
+    z-index: -1; 
+    pointer-events: none;
+}
+
+.cloud {
+    background: #EBBAC2;
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0.8;
+}
+
+.cloud1 { width: 100px; height: 60px; top: 10%; left: 15%; }
+.cloud2 { width: 120px; height: 70px; top: 20%; left: 50%; }
+.cloud3 { width: 90px; height: 50px; top: 40%; left: 30%; }
+.cloud4 { width: 130px; height: 80px; top: 60%; left: 70%; }
+
+#dreamCanvas {
+    background: #fff;
+    border: 2px solid #ccc;
+  }
+
+section {
+    height: 100vh; 
+    padding: 60px 20px;
+    position: flex;
+    background-color: #858FB4;
+    color: #EB7096;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

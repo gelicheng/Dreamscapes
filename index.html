@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dreamscapes</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!--cloud bg-->
+        <div class="parallax-bg">
+            <div class="cloud cloud1"></div>
+            <div class="cloud cloud2"></div>
+            <div class="cloud cloud3"></div>
+            <div class="cloud cloud4"></div>
+        </div>
+        <!--homepage-->
+        <section id="home">
+            <h1>Welcome back to your dream journal!</h1>
+            <a href="#dream" class="scroll-down">Scroll down to enter your dreams</a>
+        </section>
+        <!--dream input-->
+        <section id="dream">
+            <h2>Describe your dream here:</h2>
+            <textarea id="dreamText" rows="5" cols="40" placeholder="Type your dream here..."></textarea>
+            <button onclick="submitText()">Submit dream</button>
+
+            <h2>Draw your dream here:</h2>
+            <canvas id="dreamCanvas" width="300" height="200"></canvas>
+            <button onclick="submitDrawing()">Submit dream</button>
+
+            <div id="aiOutput" class="output-box"></div>
+
+            <div class="journal-controls">
+                <input type="date" id="entryDate">
+                <button onclick="saveToJournal()">Save entry to journal</button>
+                <button onclick="viewJournal()">View my journal</button>
+            </div>
+        </section>
+        <!--dream journal-->
+        <section id="journal" style="display: none;">
+            <h2>My Dream Journal</h2>
+            <div id="journalEntries">
+                <p>No entries yet.</p>
+            </div>
+        </section>
+
+        <script src="script.js"></script>
+    </body>
+</html>
