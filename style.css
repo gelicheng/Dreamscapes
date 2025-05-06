@@ -1,9 +1,11 @@
-/*fix all the colors*/
+/* Global styles */
 body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     scroll-behavior: smooth;
+    background-color: #858FB4;
+    color: #EB7096;
 }
 
 textarea, canvas, button, input[type="date"] {
@@ -11,6 +13,7 @@ textarea, canvas, button, input[type="date"] {
     font-size: 1rem;
 }
 
+/* Button styles */
 button {
     padding: 8px 16px;
     background-color: #CCD1D8;
@@ -18,22 +21,83 @@ button {
     color: #EB7096;
     cursor: pointer;
     border-radius: 6px;
+    transition: background-color 0.3s;
 }
 
 button:hover {
     background-color: #EBBAC2;
 }
 
-.output-box {
+/* Section layout */
+section {
+    min-height: 100vh; 
+    padding: 60px 20px;
+    background-color: #858FB4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Canvas */
+#dreamCanvas {
+    background: #fff;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    cursor: crosshair;
+}
+
+/* Canvas controls */
+.canvas-controls {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.color-picker {
+    margin-right: 10px;
+}
+
+/* Output containers */
+.output-box,
+.entry-container {
     margin-top: 20px;
     background-color: #F5F2F0;
     color: #333; 
     padding: 10px;
     border-radius: 8px;
-    max-width: 300px;
+    max-width: 600px;
     text-align: center;
 }
 
+/* Journal entries */
+#journalEntries {
+    max-width: 800px;
+    width: 90%;
+    margin-top: 20px;
+    background-color: #F5F2F0;
+    padding: 20px;
+    border-radius: 10px;
+    color: #333;
+}
+
+#journalEntries div {
+    background-color: #ffffff;
+    border-left: 6px solid #EB7096;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+/* Journal controls */
+.journal-controls {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Parallax cloud background */
 .parallax-bg {
     position: fixed;
     width: 100%;
@@ -44,6 +108,7 @@ button:hover {
     pointer-events: none;
 }
 
+/* Cloud styles */
 .cloud {
     background: #EBBAC2;
     border-radius: 50%;
@@ -56,19 +121,67 @@ button:hover {
 .cloud3 { width: 90px; height: 50px; top: 40%; left: 30%; }
 .cloud4 { width: 130px; height: 80px; top: 60%; left: 70%; }
 
-#dreamCanvas {
-    background: #fff;
-    border: 2px solid #ccc;
-  }
+/* Home section */
+#home h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
 
-section {
-    height: 100vh; 
-    padding: 60px 20px;
-    position: flex;
-    background-color: #858FB4;
+.scroll-down {
     color: #EB7096;
+    background-color: #CCD1D8;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.scroll-down:hover {
+    background-color: #EBBAC2;
+}
+
+.tabs {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    background-color: #CCD1D8;
+    border: none;
+    color: #EB7096;
+    cursor: pointer;
+    border-radius: 6px 6px 0 0;
+    transition: background-color 0.3s;
+    margin: 0 5px;
+}
+
+.tab.active {
+    background-color: #EBBAC2;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+img.journal-image {
+    max-width: 300px;
+    max-height: 200px;
+    border-radius: 4px;
+}
+
+.entry-actions {
+    margin-top: 10px;
+}
+
+.delete-btn {
+    background-color: #ff6b6b;
+    color: white;
 }

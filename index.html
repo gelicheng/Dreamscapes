@@ -1,50 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Dreamscapes</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <!--cloud bg-->
-        <div class="parallax-bg">
-            <div class="cloud cloud1"></div>
-            <div class="cloud cloud2"></div>
-            <div class="cloud cloud3"></div>
-            <div class="cloud cloud4"></div>
-        </div>
-        <!--homepage-->
-        <section id="home">
-            <h1>Welcome back to your dream journal!</h1>
-            <a href="#dream" class="scroll-down">Scroll down to enter your dreams</a>
-        </section>
-        <!--dream input-->
-        <section id="dream">
-            <h2>Describe your dream here:</h2>
-            <textarea id="dreamText" rows="5" cols="40" placeholder="Type your dream here..."></textarea>
-            <button onclick="submitText()">Submit dream</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dreamscapes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- cloud bg -->
+  <div class="parallax-bg">
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+    <div class="cloud cloud4"></div>
+  </div>
 
-            <h2>Draw your dream here:</h2>
-            <canvas id="dreamCanvas" width="300" height="200"></canvas>
-            <button onclick="submitDrawing()">Submit dream</button>
+  <!-- homepage -->
+  <section id="home">
+    <h1>Welcome to Dreamscapes</h1>
+    <p>Your personal dream journal and AI-powered dream interpreter</p>
+    <a href="#dream" class="scroll-down">Enter your dreams</a>
+  </section>
 
-            <div id="aiOutput" class="output-box"></div>
+  <!-- dream input -->
+  <section id="dream">
+    <h2>Record Your Dream</h2>
+    
+    <div class="tabs">
+      <button class="tab active" onclick="showTab('textTab')">Text Entry</button>
+      <button class="tab" onclick="showTab('drawingTab')">Drawing Entry</button>
+    </div>
+    
+    <div id="textTab" class="tab-content active">
+      <h3>Describe your dream with words:</h3>
+      <textarea id="dreamText" rows="5" cols="40" placeholder="Type your dream here..."></textarea>
+      <button onclick="submitText()">Submit Text Dream</button>
+    </div>
+    
+    <div id="drawingTab" class="tab-content">
+      <h3>Draw your dream:</h3>
+      <div class="canvas-controls">
+        <input type="color" id="colorPicker" class="color-picker" value="#000000">
+        <input type="range" id="brushSize" min="1" max="20" value="5">
+        <span id="brushSizeDisplay">5px</span>
+        <button onclick="clearCanvas()">Clear Canvas</button>
+      </div>
+      <canvas id="dreamCanvas" width="400" height="300"></canvas>
+      <button onclick="submitDrawing()">Submit Drawing</button>
+    </div>
 
-            <div class="journal-controls">
-                <input type="date" id="entryDate">
-                <button onclick="saveToJournal()">Save entry to journal</button>
-                <button onclick="viewJournal()">View my journal</button>
-            </div>
-        </section>
-        <!--dream journal-->
-        <section id="journal" style="display: none;">
-            <h2>My Dream Journal</h2>
-            <div id="journalEntries">
-                <p>No entries yet.</p>
-            </div>
-        </section>
+    <div id="aiOutput" class="output-box">
+      <p>Your dream will appear here after processing</p>
+    </div>
 
-        <script src="script.js"></script>
-    </body>
+    <div class="journal-controls">
+      <input type="date" id="entryDate" />
+      <button onclick="saveToJournal()">Save to Journal</button>
+      <button onclick="viewJournal()">View My Journal</button>
+    </div>
+  </section>
+
+  <!-- dream journal -->
+  <section id="journal" style="display: none;">
+    <h2>My Dream Journal</h2>
+    <div id="journalEntries">
+      <p>No entries yet.</p>
+    </div>
+    <button onclick="scrollToSection('dream')">Record New Dream</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
 </html>
